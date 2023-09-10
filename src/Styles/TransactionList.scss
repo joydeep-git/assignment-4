@@ -1,0 +1,126 @@
+@import "./Variables.scss";
+
+.TransactionList {
+    @include fd(row);
+    @include mp(auto, 1.25rem);
+    @include ai-jc(center, space-between);
+
+    width: 85%;
+    box-shadow: 0px 0px 5px rgb(196, 196, 196);
+    border-radius: 15px;
+
+    .transaction-info {
+        @include fd(row);
+        @include ai-jc(center, center);
+
+        gap: 1rem;
+
+        .user-image {
+            overflow: hidden;
+            object-fit: contain;
+
+            img {
+                height: auto;
+                width: 3.5rem;
+                clip-path: circle();
+            }
+        }
+
+        .user-data {
+            @include fd(column);
+
+            p{
+                font-size: 1.5rem;
+                font-weight: 600;
+            }
+
+            div {
+                @include ai-jc(center, none);
+
+                p {
+                    font-size: 1.25rem;
+                    color: #808080;
+                }
+
+                svg {
+                    font-size: 2rem;
+                    color: #808080;
+                }
+            }
+
+            .user-name {
+                color: #000000;
+            }
+        }
+    }
+
+
+    .profile-transaction {
+        @include fd(column);
+        @include ai-jc(center, center);
+
+        .transaction-amount {
+            @include fd(row);
+            @include ai-jc(center, none);
+            gap: 0.25rem;
+
+            p {
+                font-size: 1.5rem;
+                font-weight: 600;
+            }
+        }
+
+        .green {
+
+            p {
+                color: rgb(21, 255, 0);
+            }
+        }
+
+        .red {
+
+            p {
+                color: red;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 467px) {
+
+    .TransactionList {
+        @include mp(none, 1rem 0.75rem);
+
+        width: 95%;
+
+        .transaction-info {
+
+            .user-image{
+
+                img{
+                    height: 5rem;
+                    width: 5rem;
+                    object-fit: cover;
+                }
+            }
+
+            .user-data {
+                @include fd(column);
+
+                div{
+                    @include fd(column);
+                    @include ai-jc(start, none);
+                
+                    svg{
+                        display: none;
+                    }
+
+                    p{
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
