@@ -110,7 +110,7 @@
 
                 div{
                     @include fd(column);
-                    @include ai-jc(start, none);
+                    @include ai-jc(flex-start, none);
                 
                     svg{
                         display: none;
